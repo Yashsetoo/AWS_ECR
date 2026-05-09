@@ -15,11 +15,11 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     - name: Setup AWS ECR Details
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v2
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_ID}}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY}}
-        aws-region: ${{secrets.AWS_REGION}}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
     - name: Login to Amazon ECR
       id: login-pf-aws-ecr
       uses: aws-actions/amazon-ecr-login@v2
